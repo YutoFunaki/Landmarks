@@ -9,18 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Turtle Rock")
-                .font(.title)
-            HStack {
-                Text("Joshua Tree National Park")
-                    .font(.subheadline)
-                Spacer()
-                Text("California")
-                    .font(.subheadline)
+        VStack {
+            MapView()
+                .ignoresSafeArea(edges: .top)//MapViewを画面上端まで拡張させる
+                .frame(height: 300)//縦幅300
+            
+            CircleImage()
+                .offset(y: -130)//MapViewと被せるためにY軸移動
+                .padding(.bottom, -130)
+
+            
+            VStack(alignment: .leading) {
+                Text("Turtle Rock")
+                    .font(.title)
+                HStack {
+                    Text("Joshua Tree National Park")
+                        .font(.subheadline)
+                    Spacer()
+                    Text("California")
+                        .font(.subheadline)
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+
+                
+                Divider()//薄いボーダー
+                
+                Text("About Turtle Rock")
+                    .font(.title2)
+                Text("Descriptive text goes here.")
+                
             }
+            .padding()
+            
+            Spacer()
         }
-        .padding()
     }
 }
 
