@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct Landmark: Hashable, Codable {
+struct Landmark: Hashable, Codable, Identifiable {
     var id: Int                     //固有識別子
     var name: String                //観光地名
     var park: String                //公園の名前
